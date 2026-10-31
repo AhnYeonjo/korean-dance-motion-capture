@@ -30,6 +30,13 @@ This repo is the latest step in a longer line of work on recovering 3D structure
 
 See [research/](research/) for how each step led to the next and where the work is heading.
 
+## Reference video
+
+<p align="center">
+  <a href="media/reference_sway.mp4"><img src="media/reference_sway_preview.gif" alt="Reference performance of the sway movement" width="300"></a><br>
+  <em>Reference performance of the movement, recorded in a dance studio (<a href="media/reference_sway.mp4">full video</a>, cropped and muted; a passer-by in the first seconds is blurred).</em>
+</p>
+
 ## Why
 
 The goal is to record and teach Korean dance movement without a motion-capture studio. With a single camera, pose estimators only see two dimensions, so movement toward or away from the lens gets lost. This project tests a cheap fix: film the same routine twice, from the front and from the side, and combine the two views into 3D.
@@ -142,7 +149,7 @@ Add a profile in `profiles/` that maps roles such as `hips`, `spine0…`, `upper
 pipeline/   detection, fusion, retargeting, Blender build, render helpers
 profiles/   bone mappings for each character rig
 data/       keypoints and intermediate results from the recording (no video)
-media/      result animations
+media/      result animations, figures, reference video
 scripts/    convenience launcher for macOS
 research/   earlier projects (01–03) and gait-biomarker code
 ```
