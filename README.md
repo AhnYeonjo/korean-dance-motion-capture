@@ -76,7 +76,7 @@ The front view detects every keypoint in every frame. In the side view the right
 <p align="center"><img src="media/keypoint_coverage.png" width="640" alt="Keypoint detection coverage per joint, front vs side"></p>
 
 **2. The two takes were separate performances.**
-The dancer's timing drifts by up to about a second between the takes. Dynamic time warping on view-independent signals (limb heights) maps every front frame to the matching side frame. After alignment, the same movement lines up across both videos.
+The timing differs by up to 1.7 seconds between the takes. Dynamic time warping on view-independent signals (limb heights) maps every front frame to the matching side frame. After alignment, the same movement lines up across both videos.
 
 <p align="center"><img src="media/sync.png" width="700" alt="DTW alignment curve and aligned wrist-height signals"></p>
 
