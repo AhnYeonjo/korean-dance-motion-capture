@@ -35,8 +35,8 @@ See [research/](research/) for how each step led to the next and where the work 
 <p align="center">
   <a href="media/reference_sway.mp4"><img src="media/reference_sway_preview.gif" alt="Reference performance of the sway movement" height="300"></a>
   &nbsp;
-  <a href="media/reference_2.mp4"><img src="media/reference_2_preview.gif" alt="Second reference clip" height="300"></a><br>
-  <em>Reference performances recorded in a dance studio: <a href="media/reference_sway.mp4">sway sequence</a> (23 s) and <a href="media/reference_2.mp4">a second clip</a> (8 s). Both are cropped to the dancer and muted, and other people in the room are blurred.</em>
+  <a href="media/reference_basic_movement.mp4"><img src="media/reference_basic_movement_preview.gif" alt="Reference performance of the basic movement" height="300"></a><br>
+  <em>Reference performances recorded in a dance studio: <a href="media/reference_sway.mp4">sway sequence</a> (23 s) and <a href="media/reference_basic_movement.mp4">basic movement</a> (8 s). Both are cropped to the dancer and muted, and other people in the room are blurred.</em>
 </p>
 
 ## Why
