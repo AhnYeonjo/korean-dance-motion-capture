@@ -1,0 +1,7 @@
+numpy
+scipy
+opencv-python
+ultralytics
+pillow
+# optional: run Blender steps without the Blender app (Python 3.13)
+# bpy

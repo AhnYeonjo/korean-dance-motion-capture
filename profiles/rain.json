@@ -1,0 +1,88 @@
+{
+ "rig": "RIG-rain",
+ "root": "ROOT",
+ "hair_parent_bone": null,
+ "bones": {
+  "hips": "MSTR-Pelvis",
+  "spine0": "FK-Spine",
+  "spine1": "FK-RibCage",
+  "spine2": "FK-Chest",
+  "neck": "FK-Neck",
+  "head": "FK-Head",
+  "upper.L": "FK-Upperarm.L",
+  "fore.L": "FK-Forearm.L",
+  "hand.L": "FK-Hand.L",
+  "upper.R": "FK-Upperarm.R",
+  "fore.R": "FK-Forearm.R",
+  "hand.R": "FK-Hand.R",
+  "thigh.L": "FK-Thigh.L",
+  "shin.L": "FK-Shin.L",
+  "foot.L": "FK-Foot.L",
+  "thigh.R": "FK-Thigh.R",
+  "shin.R": "FK-Shin.R",
+  "foot.R": "FK-Foot.R"
+ },
+ "props": [
+  [
+   "Properties_IKFK",
+   "ik_spine",
+   0.0
+  ],
+  [
+   "Properties_IKFK",
+   "ik_arm_left",
+   0.0
+  ],
+  [
+   "Properties_IKFK",
+   "ik_arm_right",
+   0.0
+  ],
+  [
+   "Properties_IKFK",
+   "ik_leg_left",
+   0.0
+  ],
+  [
+   "Properties_IKFK",
+   "ik_leg_right",
+   0.0
+  ],
+  [
+   "Properties_IKFK",
+   "fk_hinge_arm_left",
+   0.0
+  ],
+  [
+   "Properties_IKFK",
+   "fk_hinge_arm_right",
+   0.0
+  ]
+ ],
+ "gravity": {
+  "bones": [
+   [
+    "FK-Hair_Ponytail1",
+    0.5
+   ],
+   [
+    "FK-Hair_Ponytail2",
+    0.8
+   ],
+   [
+    "FK-Hair_Ponytail3",
+    0.95
+   ],
+   [
+    "FK-Hair_Ponytail4",
+    1.0
+   ]
+  ],
+  "target": [
+   0,
+   4,
+   -20
+  ]
+ },
+ "lock_feet": true
+}

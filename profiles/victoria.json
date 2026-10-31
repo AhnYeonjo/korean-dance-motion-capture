@@ -1,0 +1,10 @@
+{"rig": "RIG-Victoria", "root": "root", "hair_parent_bone": "DEF-Head",
+ "bones": {"hips": "MSTR-Spine_Torso", "spine0": "FK-Spine", "spine1": "FK-Belly", "spine2": "FK-RibCage", "spine3": "FK-Chest",
+  "neck": "FK-Neck", "head": "FK-Head",
+  "clav.L": "FK-Shoulder.L", "upper.L": "FK-UpperArm.L", "fore.L": "FK-Forearm.L", "hand.L": "FK-Wrist.L",
+  "clav.R": "FK-Shoulder.R", "upper.R": "FK-UpperArm.R", "fore.R": "FK-Forearm.R", "hand.R": "FK-Wrist.R",
+  "thigh.L": "FK-Thigh.L", "shin.L": "FK-Knee.L", "foot.L": "FK-Foot.L",
+  "thigh.R": "FK-Thigh.R", "shin.R": "FK-Knee.R", "foot.R": "FK-Foot.R"},
+ "props": [["PRP-UpperArm.L", "ik_left_arm", 0.0], ["PRP-UpperArm.R", "ik_right_arm", 0.0],
+           ["PRP-Thigh.L", "ik_left_leg", 0.0], ["PRP-Thigh.R", "ik_right_leg", 0.0], ["PRP-Spine", "ik_spine", 0.0],
+           ["PRP-Head", "fk_hinge_neck", 0.0], ["PRP-Head", "fk_hinge_head", 0.0]]}
