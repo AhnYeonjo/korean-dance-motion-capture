@@ -5,7 +5,7 @@ Turning two ordinary phone videos of a dance — one filmed from the **front**, 
 > **At a glance**
 > - **What:** a low-cost 3D motion-capture pipeline built from two phones instead of a studio, applied to Korean dance.
 > - **How:** 2D pose detection → DTW time alignment of the two takes → 3D fusion (sideways from the front view, depth from the side view) → retargeting to a character rig, with anatomy-aware clean-up.
-> - **Result:** 641 frames (21 s) of fused 3D motion driving the Rain character in Blender. Front-view keypoints were detected in 100% of frames, and the aligned takes match closely (r = 0.98 on the wrist-height signal used for alignment).
+> - **Status:** a working **prototype**. It produces a 21-second demo (641 frames) of fused 3D motion driving the Rain character in Blender, and it is still being improved (see *Limitations and next steps*). Front-view keypoints were detected in 100% of frames, and the aligned takes match closely (r = 0.98 on the wrist-height signal used for alignment).
 
 <p align="center">
   <img src="media/rain_dance.gif" alt="Rain character performing the captured dance (front and side views)" width="560"><br>
