@@ -2,6 +2,11 @@
 
 Turning two ordinary phone videos of a dance — one filmed from the **front**, one from the **side** — into 3D motion that drives a rigged character in Blender.
 
+> **At a glance**
+> - **What:** a low-cost 3D motion-capture pipeline built from two phones instead of a studio, applied to Korean dance.
+> - **How:** 2D pose detection → DTW time alignment of the two takes → 3D fusion (sideways from the front view, depth from the side view) → retargeting to a character rig, with anatomy-aware clean-up.
+> - **Result:** 641 frames (21 s) of fused 3D motion driving the Rain character in Blender. Front-view keypoints were detected in 100% of frames, and the aligned takes match closely (r = 0.98 on the wrist-height signal used for alignment).
+
 <p align="center">
   <img src="media/rain_dance.gif" alt="Rain character performing the captured dance (front and side views)" width="560"><br>
   <em>The captured motion retargeted onto the Rain character (front | side).</em>
@@ -19,7 +24,7 @@ This repo is the latest step in a longer line of work on recovering 3D structure
 | # | Project | Type |
 |---|---|---|
 | 01 | [3D Reconstruction from Photos (Meshroom)](research/01-3d-reconstruction/) | School project, grade 10 |
-| 02 | [Drone-Based Detection of Wandering](research/02-wandering-detection-proposal/) | Research proposal |
+| 02 | [Gait Recognition for Drone/CCTV Missing-Person Search](research/02-gait-recognition-drone/) | STEAM R&E 2024 (team of 2): DeepGaitV2 on a drone + Jetson Orin |
 | 03 | [AI Gait Analysis for Early Alzheimer's Detection](research/03-gait-alzheimers/) | Team paper (KSFI), plus working gait-biomarker code |
 | **04** | **Korean Dance Motion Capture → Blender** (this page) | **Ongoing, October 2026** |
 
@@ -62,6 +67,25 @@ Raw fused motion isn't automatically good animation. These options came out of r
 | `--swing-raise=45` | Rescales the sideways arm lift in the opening section to a target angle. |
 | `--fixed-head` | Keeps the head facing forward. Face keypoints are noisy because the far ear is hidden in the side view. |
 | `--face-front`, `--legs-sagittal`, `--forward=0.8` | Keeps the body facing front, the pelvis level and the legs bending only forward and back. Adds a steady forward travel that starts after the opening swing. |
+
+## Results and problem solving
+
+**1. One camera can't see depth, and a side camera can't see the far arm.**
+The front view detects every keypoint in every frame. In the side view the right arm is behind the body: the right elbow is detected in only 41% of frames and the right ear in none. Fusion therefore takes depth from the side view only where it can be trusted, and otherwise infers the hidden arm from the visible one.
+
+<p align="center"><img src="media/keypoint_coverage.png" width="640" alt="Keypoint detection coverage per joint, front vs side"></p>
+
+**2. The two takes were separate performances.**
+The dancer's timing drifts by up to about a second between the takes. Dynamic time warping on view-independent signals (limb heights) maps every front frame to the matching side frame. After alignment, the same movement lines up across both videos.
+
+<p align="center"><img src="media/sync.png" width="700" alt="DTW alignment curve and aligned wrist-height signals"></p>
+
+**3. Accurate data still made bad animation, so the character's body had to be considered.**
+The Rain character is much wider than the dancer, so correctly measured hand positions ended up inside her hips. Measuring the character's torso cross-sections and pushing arm segments outside them fixed this. A ponytail modelled sticking straight out was set to hang with gravity. Locked ankles, a level pelvis and limits on elbow and shoulder angles removed the remaining unnatural poses.
+
+<p align="center"><img src="media/fix_0.png" width="430" alt="Before and after the body-collision fix"> &nbsp; <img src="media/fix_1.png" width="470" alt="Before and after ponytail gravity"></p>
+
+**What I learned:** tracking accuracy and believable motion are different problems. The biggest improvements came from reviewing renders frame by frame against the reference video and turning each visual problem into a measurable constraint.
 
 ## Run it
 
