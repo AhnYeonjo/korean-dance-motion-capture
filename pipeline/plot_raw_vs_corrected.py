@@ -59,7 +59,7 @@ lat_raw = (hf_raw[:, 0] - np.nanmean(hf_raw[:30, 0])) * scale_m
 ax[3].plot(t, lat_raw, color='#9aa7b8', lw=1, label='raw: hip position in front video')
 ax[3].plot(t, savgol_filter(lat_raw, int(2 * fps_f) | 1, 2, mode='nearest'), color='#e8873a', lw=2, label='trend line')
 ax[3].plot(t, T['hips'][:, 0] - T['hips'][0, 0], color='#2a6fdb', lw=2.5, label='final animation: sideways drift removed (design choice)')
-ax[3].set_ylabel('sideways drift (m)'); ax[3].set_xlabel('time (s)'); ax[3].legend(fontsize=8, loc='upper left')
+ax[3].set_ylabel('sideways drift (m)'); ax[3].set_xlabel('time (s)'); ax[3].legend(fontsize=8, loc='lower left')
 ax[3].set_title('(d) Sideways drift: measured vs. final animation', fontsize=10, loc='left')
 fig.tight_layout(); fig.savefig('../media/raw_vs_corrected.png', dpi=120)
 
