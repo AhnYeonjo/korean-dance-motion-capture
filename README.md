@@ -85,6 +85,20 @@ The Rain character is much wider than the dancer, so correctly measured hand pos
 
 <p align="center"><img src="media/fix_0.png" width="430" alt="Before and after the body-collision fix"> &nbsp; <img src="media/fix_1.png" width="470" alt="Before and after ponytail gravity"></p>
 
+**4. Raw detections vs. corrected motion.**
+All curves below come from the real recording. Grey and orange are what the pose detector produced; blue and red are what the character uses.
+
+<p align="center"><img src="media/raw_vs_corrected.png" width="760" alt="Raw detections versus corrected motion"></p>
+
+| | Raw | Corrected |
+|---|---|---|
+| (a) Left-wrist height jitter (mean frame-to-frame 2nd difference) | 0.0184 | 0.0016 (≈11× smoother) |
+| (b) Right wrist hidden in the side view | 38% of frames | filled in from the visible left arm |
+| (c) Forward travel | ≈0.15 m measured, wobbly | 0.8 m steady walk after the opening swing (**animation choice**) |
+| (d) Sideways drift | 0.27 m measured | removed so the character faces front (**animation choice**) |
+
+(a) and (b) are corrections of measurement noise and occlusion. (c) and (d) are deliberate animation choices that depart from what was measured, and they are labelled that way in the figure.
+
 **What I learned:** tracking accuracy and believable motion are different problems. The biggest improvements came from reviewing renders frame by frame against the reference video and turning each visual problem into a measurable constraint.
 
 ## Run it
