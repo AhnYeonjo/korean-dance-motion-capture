@@ -12,6 +12,19 @@ Turning two ordinary phone videos of a dance — one filmed from the **front**, 
   <em>The fused 3D skeleton (green = left, red = right). The source videos aren't included in this repo for privacy.</em>
 </p>
 
+## Research journey
+
+This repo is the latest step in a longer line of work on recovering 3D structure from images and reading meaning from human movement:
+
+| # | Project | Type |
+|---|---|---|
+| 01 | [3D Reconstruction from Photos (Meshroom)](research/01-3d-reconstruction/) | School project, grade 10 |
+| 02 | [Drone-Based Detection of Wandering](research/02-wandering-detection-proposal/) | Research proposal |
+| 03 | [AI Gait Analysis for Early Alzheimer's Detection](research/03-gait-alzheimers/) | Team paper (KSFI), plus working gait-biomarker code |
+| **04** | **Korean Dance Motion Capture → Blender** (this page) | **Ongoing, October 2026** |
+
+See [research/](research/) for how each step led to the next and where the work is heading.
+
 ## Why
 
 The goal is to record and teach Korean dance movement without a motion-capture studio. With a single camera, pose estimators only see two dimensions, so movement toward or away from the lens gets lost. This project tests a cheap fix: film the same routine twice, from the front and from the side, and combine the two views into 3D.
@@ -89,6 +102,7 @@ profiles/   bone mappings for each character rig
 data/       keypoints and intermediate results from the recording (no video)
 media/      result animations
 scripts/    convenience launcher for macOS
+research/   earlier projects (01–03) and gait-biomarker code
 ```
 
 ## Limitations and next steps

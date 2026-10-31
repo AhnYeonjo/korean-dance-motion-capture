@@ -3,5 +3,6 @@ scipy
 opencv-python
 ultralytics
 pillow
+matplotlib
 # optional: run Blender steps without the Blender app (Python 3.13)
 # bpy
